@@ -1,5 +1,8 @@
 from django.db import models
+<<<<<<< HEAD
 from category_api.models import Category  
+=======
+>>>>>>> feat/products
  
 class Product(models.Model):
     name = models.CharField(max_length=30)

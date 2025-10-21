@@ -37,9 +37,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+<<<<<<< HEAD
     "rest_framework",
     "category_api",
     "products_api",
+=======
+    'rest_framework',
+    'products_api',
+>>>>>>> feat/products
 ]
 
 MIDDLEWARE = [
