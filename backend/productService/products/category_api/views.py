@@ -8,4 +8,7 @@ from .serializer import CategorySerializer
 
 @api_view(['GET'])
 def get_category(request):
-    return Response(CategorySerializer({'name': 'fiction', 'description': 'Fiction is awesome'}).data)
+    categories = Category.objects.all()
+    serializer = CategorySerializer(categories, many=True)
+    return Response(serializer.data)
+    

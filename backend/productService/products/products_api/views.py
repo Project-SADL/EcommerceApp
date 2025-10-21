@@ -7,4 +7,6 @@ from .serializer import ProductSerializer
 
 @api_view(['GET'])
 def get_product(request):
-    return Response(ProductSerializer({'name': 'Datuna', 'author': "don Joan",}))
+    product = Product.objects.all()
+    serializer = ProductSerializer(product, many=True)
+    return Response(serializer.data)
