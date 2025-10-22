@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstore</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script type="text/babel">
+
+      const URL = 'https://dummyjson.com/test';
+
+    //REACT COMPONENT
+      function App() {
+        //FETCH DATA FROM THE REST API
+        React.useEffect(() => {
+          const fetchData = async () => {
+            const res = await fetch(URL);
+            const json = await res.json();
+            console.log("REST API is connected", json);
+          };
+          fetchData();
+        }, []);
+
+        //UI PART - REACT RENDERS THIS TO THE CONTAINER
+        return (
+          <div className="App">
+            <h1>Bookstore</h1>
+            <p> Testing REST API</p>
+                <div>
+                    <h3>Books: </h3>
+                    <>
+                    <ul>Rapunzel</ul>
+                    <ul>Rapunzel</ul>
+                    <ul>Rapunzel</ul>
+                    </>
+                </div>
+          </div>
+        );
+      }
+      //RENDERING THE COMPONENT TO THE PAGE
+      const container = document.querySelector('.js-container');
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>
