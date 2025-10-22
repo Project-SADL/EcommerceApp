@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,10 +81,10 @@ WSGI_APPLICATION = "products.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerceweb_db',
-        'USER': 'root',
-        'PASSWORD': 'datuna123',
-        'HOST': 'localhost',
+        'NAME': 'productService',
+        'USER': 'admin',
+        'PASSWORD': 'userServiceSDAL!',
+        'HOST': 'ecommerce-sad.c052606ucl0u.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
