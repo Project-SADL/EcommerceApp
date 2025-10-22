@@ -1,2 +1,1 @@
-# EcommerceApp
-Practice Ecommerce Microservice Application
+This is a fresh start.
