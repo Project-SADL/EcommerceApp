@@ -81,11 +81,11 @@ WSGI_APPLICATION = "products.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'productService',
-        'USER': 'admin',
-        'PASSWORD': 'userServiceSDAL!',
-        'HOST': 'ecommerce-sad.c052606ucl0u.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
