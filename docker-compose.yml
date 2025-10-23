@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  product-service-img:
+    build:
+      context: ./backend/productService
+    volumes:
+      - ./backend/productService:/productService
+    ports:
+      - "8000:8000"
+    image: product-service-img
+    container_name: product-service-container
+    env_file:
+      - ./backend/productService/.env
+    
+    working_dir: /productService/products    
+    command: python3 manage.py runserver 0.0.0.0:8000
