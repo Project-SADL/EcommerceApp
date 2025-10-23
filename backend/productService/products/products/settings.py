@@ -76,8 +76,8 @@ TEMPLATES = [
 WSGI_APPLICATION = "products.wsgi.application"
 
 
-import pymysql
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.install_as_MySQLdb()
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 DATABASES = {
